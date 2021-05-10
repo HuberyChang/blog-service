@@ -8,11 +8,11 @@ package routes
 import (
 	v1 "blog-service/internal/routes/api/v1"
 
-	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
-	"github.com/swaggo/gin-swagger/swaggerFiles"
 
 	_ "github.com/HuberyChang/blog-service/docs"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
+
 	"github.com/gin-gonic/gin"
 )
 
