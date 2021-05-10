@@ -6,17 +6,17 @@
 package main
 
 import (
-	"blog-service/global"
-	"blog-service/internal/model"
-	"blog-service/internal/routes"
-	"blog-service/pkg/logger"
-	"blog-service/pkg/setting"
 	"log"
 	"net/http"
 	"time"
 
 	"gopkg.in/natefinch/lumberjack.v2"
 
+	"github.com/HuberyChang/blog-service/global"
+	"github.com/HuberyChang/blog-service/internal/model"
+	"github.com/HuberyChang/blog-service/internal/routes"
+	"github.com/HuberyChang/blog-service/pkg/logger"
+	"github.com/HuberyChang/blog-service/pkg/setting"
 	"github.com/gin-gonic/gin"
 )
 

@@ -6,10 +6,10 @@
 package model
 
 import (
-	"blog-service/global"
-	"blog-service/pkg/setting"
 	"fmt"
 
+	"github.com/HuberyChang/blog-service/global"
+	"github.com/HuberyChang/blog-service/pkg/setting"
 	"github.com/jinzhu/gorm"
 )
 

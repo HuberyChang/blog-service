@@ -6,9 +6,9 @@
 package app
 
 import (
-	"blog-service/pkg/errcode"
 	"net/http"
 
+	"github.com/HuberyChang/blog-service/pkg/errcode"
 	"github.com/gin-gonic/gin"
 )
 

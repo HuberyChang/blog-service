@@ -6,11 +6,10 @@
 package routes
 
 import (
-	v1 "blog-service/internal/routes/api/v1"
-
 	ginSwagger "github.com/swaggo/gin-swagger"
 
 	_ "github.com/HuberyChang/blog-service/docs"
+	v1 "github.com/HuberyChang/blog-service/internal/routes/api/v1"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 
 	"github.com/gin-gonic/gin"

@@ -6,8 +6,8 @@
 package global
 
 import (
-	"blog-service/pkg/logger"
-	"blog-service/pkg/setting"
+	"github.com/HuberyChang/blog-service/pkg/logger"
+	"github.com/HuberyChang/blog-service/pkg/setting"
 )
 
 var (

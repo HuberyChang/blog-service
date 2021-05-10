@@ -6,9 +6,8 @@
 package v1
 
 import (
-	"blog-service/pkg/app"
-	"blog-service/pkg/errcode"
-
+	"github.com/HuberyChang/blog-service/pkg/app"
+	"github.com/HuberyChang/blog-service/pkg/errcode"
 	"github.com/gin-gonic/gin"
 )
 

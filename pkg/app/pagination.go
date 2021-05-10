@@ -6,9 +6,8 @@
 package app
 
 import (
-	"blog-service/global"
-	"blog-service/pkg/convert"
-
+	"github.com/HuberyChang/blog-service/global"
+	"github.com/HuberyChang/blog-service/pkg/convert"
 	"github.com/gin-gonic/gin"
 )
 
