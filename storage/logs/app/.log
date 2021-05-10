@@ -1,0 +1,1 @@
+2021/05/10 23:52:23 {"callers":["D:/go/workspace/src/test/blog-service/main.go:29 main.init.0"],"level":"error","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1620661943660795700}

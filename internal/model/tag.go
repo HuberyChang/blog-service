@@ -5,7 +5,9 @@
 
 package model
 
-import "github.com/HuberyChang/blog-service/pkg/app"
+import (
+	"github.com/HuberyChang/blog-service/pkg/app"
+)
 
 type Tag struct {
 	*Model

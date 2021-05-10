@@ -1,6 +1,6 @@
 Server:
   RunMode: debug
-  httpPort: 8080
+  httpPort: 8000
   ReadTimeout: 60
   WriteTimeout: 60
 App:
