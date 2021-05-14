@@ -1,2 +1,10 @@
 2021/05/10 23:52:23 {"callers":["D:/go/workspace/src/test/blog-service/main.go:29 main.init.0"],"level":"error","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1620661943660795700}
 2021/05/10 23:52:52 {"callers":["D:/go/workspace/src/test/blog-service/main.go:29 main.init.0"],"level":"error","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1620661972426371100}
+2021/05/11 17:40:42 {"callers":["D:/go/workspace/src/test/blog-service/main.go:29 main.init.0"],"level":"error","message":"app.BindAndValid errs:Name长度必须至少为3个字符","time":1620726042824826000}
+2021/05/11 23:30:01 {"callers":["D:/go/workspace/src/test/blog-service/main.go:29 main.init.0"],"level":"error","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1620747001515871300}
+2021/05/12 13:08:00 {"callers":["D:/go/workspace/src/test/blog-service/main.go:33 main.init.0"],"level":"error","message":"app.BindAndValid errs:Name长度必须至少为3个字符,State为必填字段","time":1620796080354517700}
+2021/05/12 13:08:25 {"callers":["D:/go/workspace/src/test/blog-service/main.go:33 main.init.0"],"level":"error","message":"app.BindAndValid errs:Name长度必须至少为3个字符,State为必填字段","time":1620796105203734100}
+2021/05/12 13:24:59 {"callers":["D:/go/workspace/src/test/blog-service/main.go:33 main.init.0"],"level":"error","message":"app.BindAndValid errs:Name长度必须至少为3个字符,State为必填字段","time":1620797099677893600}
+2021/05/12 13:25:18 {"callers":["D:/go/workspace/src/test/blog-service/main.go:33 main.init.0"],"level":"error","message":"app.BindAndValid errs:Name长度必须至少为3个字符,State为必填字段","time":1620797118269666400}
+2021/05/12 13:25:47 {"callers":["D:/go/workspace/src/test/blog-service/main.go:33 main.init.0"],"level":"error","message":"app.BindAndValid errs:Name长度必须至少为3个字符,State为必填字段","time":1620797147012186600}
+2021/05/12 13:26:16 {"callers":["D:/go/workspace/src/test/blog-service/main.go:33 main.init.0"],"level":"error","message":"app.BindAndValid errs:State为必填字段,Name长度必须至少为3个字符","time":1620797176850141200}

@@ -6,7 +6,11 @@
 package routes
 
 import (
+	"net/http"
+
+	"github.com/HuberyChang/blog-service/global"
 	"github.com/HuberyChang/blog-service/internal/middleware"
+	"github.com/HuberyChang/blog-service/internal/routes/api"
 	ginSwagger "github.com/swaggo/gin-swagger"
 
 	_ "github.com/HuberyChang/blog-service/docs"
@@ -18,6 +22,9 @@ import (
 
 func NewRouter() *gin.Engine {
 	r := gin.New()
+	upload := api.NewUpload()
+	r.POST("/upload/file", upload.UploadFile)
+	r.StaticFS("/static", http.Dir(global.AppSetting.UploadSavePath))
 	r.Use(gin.Logger())
 	r.Use(gin.Recovery())
 	r.Use(middleware.Translations())

@@ -18,13 +18,17 @@ import (
 	"github.com/HuberyChang/blog-service/pkg/logger"
 	"github.com/HuberyChang/blog-service/pkg/setting"
 	"github.com/gin-gonic/gin"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
 func init() {
 	err := setupSetting()
-	// err = setupDBEngine()
 	if err != nil {
 		log.Fatalf("init.setupSetting err: %v", err)
+	}
+	err = setupDBEngine()
+	if err != nil {
+		log.Fatalf("init.setupDBEngine err: %v", err)
 	}
 	err = setupLogger()
 	if err != nil {
@@ -93,5 +97,5 @@ func main() {
 		MaxHeaderBytes: 1 << 20,
 	}
 	s.ListenAndServe()
-	global.Logger.Infof("%s: go-programming-tour-book/%s", "eddycjy", "blog-service")
+	global.Logger.Infof("%s: HuberyChang/%s", "eddycjy", "blog-service")
 }
