@@ -7,6 +7,9 @@ package routes
 
 import (
 	"net/http"
+	"time"
+
+	"github.com/HuberyChang/blog-service/pkg/limiter"
 
 	"github.com/HuberyChang/blog-service/global"
 	"github.com/HuberyChang/blog-service/internal/middleware"
@@ -20,8 +23,27 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+var methodLimiters = limiter.NewMethodLimiter().AddBuckets(limiter.LimiterBucketRule{
+	Key:          "/auth",
+	FillInterval: time.Second,
+	Capacity:     10,
+	Quantum:      10,
+})
+
 func NewRouter() *gin.Engine {
 	r := gin.New()
+	if global.ServerSetting.RunMode == "degbug" {
+		r.Use(gin.Logger())
+		r.Use(gin.Recovery())
+	} else {
+		r.Use(middleware.AccessLog())
+		r.Use(middleware.Recovery())
+	}
+
+	r.Use(middleware.RateLimiter(methodLimiters))
+	r.Use(middleware.ContextTimeout(global.AppSetting.DefaultContextTimeout))
+	r.Use(middleware.Translations())
+
 	upload := api.NewUpload()
 	r.POST("/upload/file", upload.UploadFile)
 	r.POST("/auth", api.GetAuth)

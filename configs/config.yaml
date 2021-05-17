@@ -12,6 +12,7 @@ App:
   UploadSavePath: storage/uploads
   UploadServerUrl: http://127.0.0.1:8000/static
   UploadImageMaxSize: 5
+  DefaultContextTimeout: 60
   UploadImageAllowExts:
     - .jpg
     - .jpeg
@@ -31,3 +32,12 @@ JWT:
   Secret: eddycjy
   Issuer: blog_service
   Expire: 7200
+Email:
+  Host: smtp.qq.com
+  Port: 465
+  UserName: 1632425633@qq.com
+  Password: hallxjkxpdhqgjef
+  IsSLL: true
+  From: 1632425633@qq.com
+  To:
+    - changjunhang@medlinker.com
