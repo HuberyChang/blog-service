@@ -13,6 +13,8 @@ import (
 	"log"
 	"runtime"
 	"time"
+
+	"github.com/gin-gonic/gin"
 )
 
 type Level int8
@@ -92,6 +94,17 @@ func (l *Logger) WithCaller(skip int) *Logger {
 	return ll
 }
 
+func (l *Logger) WithTrace() *Logger {
+	ginCtx, ok := l.ctx.(*gin.Context)
+	if ok {
+		return l.WithFields(Fields{
+			"trace_id": ginCtx.MustGet("X-Trace-ID"),
+			"span_id":  ginCtx.MustGet("X-Span-ID"),
+		})
+	}
+	return l
+}
+
 func (l *Logger) WithCallersFrames() *Logger {
 	maxCallerDepth := 25
 	minCallerDepth := 1
@@ -149,7 +162,7 @@ func (l *Logger) Info(ctx context.Context, v ...interface{}) {
 	l.Output(LevelInfo, fmt.Sprint(v...))
 }
 
-func (l *Logger) Infof(ctx string, format string, v ...interface{}) {
+func (l *Logger) Infof(ctx context.Context, format string, v ...interface{}) {
 	l.Output(LevelInfo, fmt.Sprintf(format, v...))
 }
 

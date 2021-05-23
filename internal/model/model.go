@@ -11,6 +11,7 @@ import (
 
 	"github.com/HuberyChang/blog-service/global"
 	"github.com/HuberyChang/blog-service/pkg/setting"
+	otgorm "github.com/eddycjy/opentracing-gorm"
 	"github.com/jinzhu/gorm"
 )
 
@@ -49,6 +50,7 @@ func NewDBEngine(databaseSetting *setting.DatabaseSettings) (*gorm.DB, error) {
 	db.DB().SetMaxIdleConns(databaseSetting.MaxIdleConns)
 	db.DB().SetMaxOpenConns(databaseSetting.MaxOpenConns)
 
+	otgorm.AddGormCallbacks(db)
 	return db, nil
 
 }

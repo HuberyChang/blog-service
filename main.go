@@ -10,6 +10,8 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/HuberyChang/blog-service/pkg/tracer"
+
 	"gopkg.in/natefinch/lumberjack.v2"
 
 	"github.com/HuberyChang/blog-service/global"
@@ -32,7 +34,11 @@ func init() {
 	}
 	err = setupLogger()
 	if err != nil {
-		log.Fatalf("init.setupLogger err:%v", err)
+		log.Fatalf("init.setupLogger err: %v", err)
+	}
+	err = setupTracer()
+	if err != nil {
+		log.Fatalf("init.setupTracer err: %v", err)
 	}
 }
 
@@ -93,6 +99,18 @@ func setupLogger() error {
 	return nil
 }
 
+func setupTracer() error {
+	jaegerTracer, _, err := tracer.NewJaegerTracer(
+		"blog-service",
+		"127.0.0.1:6831",
+	)
+	if err != nil {
+		return err
+	}
+	global.Tracer = jaegerTracer
+	return nil
+}
+
 // @title 博客系统
 // @version 1.0
 // @description Go 语言编程之旅：一起用 Go 做项目
@@ -108,5 +126,5 @@ func main() {
 		MaxHeaderBytes: 1 << 20,
 	}
 	s.ListenAndServe()
-	global.Logger.Infof("%s: HuberyChang/%s", "eddycjy", "blog-service")
+	// global.Logger.Infof("%s: HuberyChang/%s", "eddycjy", "blog-service")
 }
