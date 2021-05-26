@@ -58,6 +58,6 @@ func Tracing() func(c *gin.Context) {
 		c.Set("X-Trace-ID", traceID)
 		c.Set("X-Span-ID", spanID)
 		c.Request = c.Request.WithContext(newCtx)
-		c.Next()
+		xt()
 	}
 }
