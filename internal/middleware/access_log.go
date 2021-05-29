@@ -36,6 +36,8 @@ func AccessLog() gin.HandlerFunc {
 		c.Writer = bodyWriter
 
 		beginTime := time.Now().Unix()
+		// next函数将中间件程序分为前后两个部分，next前面的按照顺序执行，next之后会在业务逻辑处理完毕后再执行
+		// 先执行next函数前面的代码，执行到next函数时，转而去执行业务处理程序，执行完业务程序，然后再返回中间件执行next后面的代码
 		c.Next()
 		endTime := time.Now().Unix()
 
