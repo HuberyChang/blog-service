@@ -51,6 +51,5 @@ type Article struct {
 	Tag     *model.Tag `json:"tag"`
 }
 
-func (svc *Service)GetArticle(param *AuthRequest)(*Article,error)  {
-	article,err:=svc.dao.
+func (svc *Service) GetArticle(param *AuthRequest) (*Article, error) {
 }
