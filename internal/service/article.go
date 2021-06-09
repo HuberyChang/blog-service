@@ -52,4 +52,5 @@ type Article struct {
 }
 
 func (svc *Service) GetArticle(param *AuthRequest) (*Article, error) {
+
 }
